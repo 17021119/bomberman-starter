@@ -172,9 +172,9 @@ public class Game extends Canvas {
 	}
 	
 	public static void addBombRadius(int i) {
-		bombRadius += i;
+		bombRadius +=i;
 	}
-	
+
 	public static void addBombRate(int i) {
 		bombRate += i;
 	}

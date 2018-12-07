@@ -98,7 +98,7 @@ public class Board implements IRender {
 		try {
 			_levelLoader = new FileLevelLoader(this, level);
 			_entities = new Entity[_levelLoader.getHeight() * _levelLoader.getWidth()];
-			
+
 			_levelLoader.createEntities();
 		} catch (LoadLevelException e) {
 			endGame();
@@ -351,5 +351,17 @@ public class Board implements IRender {
 	public int getHeight() {
 		return _levelLoader.getHeight();
 	}
-	
+	public Character getCharacterAt(double x, double y) {
+		Iterator<Character> itr = _characters.iterator();
+
+		Character cur;
+		while(itr.hasNext()) {
+			cur = itr.next();
+
+			if(cur.getXTile() == x && cur.getYTile() == y)
+				return cur;
+		}
+
+		return null;
+	}
 }
